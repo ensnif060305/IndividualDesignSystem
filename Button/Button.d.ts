@@ -1,9 +1,12 @@
 import * as React from "react";
 
-export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  type?: "submit" | "button" | "reset";
-
+export interface IButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
+
+  variant?: "text" | "outlined" | "filled";
+
+  sz?: "small" | "medium" | "large";
 
   disabled?: boolean;
 
@@ -14,8 +17,9 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   endIcon?: React.ReactNode;
 }
 
-declare const Button: React.ForwardRefExoticComponent<
-  IButtonProps & React.RefAttributes<HTMLButtonElement>
->;
+declare const Button: React.ForwardRefExoticComponent<{
+  props: IButtonProps;
+  ref: React.RefAttributes<HTMLButtonElement>;
+}>;
 
 export default Button;

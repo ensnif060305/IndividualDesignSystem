@@ -1,13 +1,13 @@
 import React from "react";
 import clsx from "clsx";
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { jsxs as _jsxs } from "react/jsx-runtime";
 import styled from "@emotion/styled";
 import _extends from "@babel/runtime/helpers/esm/extends";
 
 const ButtonBaseRoot = styled(
   "button",
   {}
-)({
+)(({ disabled }) => ({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
@@ -17,11 +17,11 @@ const ButtonBaseRoot = styled(
   backgroundColor: "transparent",
   outline: 0,
   border: 0,
+  borderRadius: "5px",
   margin: 0,
-  borderRadius: 0,
   padding: 0,
-  cursor: (props) => (props.disabled ? "pointer" : "default"),
-  pointerEvents: (props) => (props.disabled ? "none" : "auto"),
+  cursor: disabled ? "default" : "pointer",
+  pointerEvents: disabled ? "none" : "auto",
   userSelect: "none",
   verticalAlign: "middle",
   MozAppearance: "none",
@@ -34,7 +34,7 @@ const ButtonBaseRoot = styled(
   "@media print": {
     colorAdjust: "exact",
   },
-});
+}));
 
 const ButtonBase = React.forwardRef((props, ref) => {
   const { children, className, disabled = false, onClick, type } = props;
@@ -42,13 +42,12 @@ const ButtonBase = React.forwardRef((props, ref) => {
     ButtonBaseRoot,
     _extends(
       {
-        className: clsx(className),
+        className: className,
         onClick: onClick,
         ref: ref,
         disabled: disabled,
         type: type,
       },
-      props,
       {
         children: [children],
       }

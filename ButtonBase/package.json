@@ -1,6 +1,6 @@
 {
   "sideEffects": false,
   "module": "./index.js",
-  "main": "../node/Button/index.js",
+  "main": "../node/ButtonBase/index.js",
   "types": "module"
 }

@@ -1,3 +1,7 @@
+export { default as colors } from "./colors";
+export * from "./colors";
+export { default as style } from "./style";
+export * from "./style";
 export { default as utils } from "./utils";
 export * from "./utils";
 export { default as Button } from "./Button";

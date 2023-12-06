@@ -8,6 +8,8 @@ interface IButtonContext {
 
   variant?: IButtonProps["variant"];
 
+  color?: IButtonProps["color"];
+
   sz?: IButtonProps["sz"];
 }
 

@@ -6,6 +6,8 @@ export interface IButtonProps
 
   variant?: "text" | "outlined" | "filled";
 
+  color?: "primary" | "error" | "success";
+
   sz?: "small" | "medium" | "large";
 
   disabled?: boolean;

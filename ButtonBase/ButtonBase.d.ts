@@ -8,8 +8,6 @@ type ButtonBaseProps = {
   disabled?: boolean;
 
   type: "submit" | "button";
-  
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 declare const ButtonBase: React.ForwardRefExoticComponent<{

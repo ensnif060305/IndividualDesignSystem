@@ -17,7 +17,7 @@ const ButtonBaseRoot = styled(
   backgroundColor: "transparent",
   outline: 0,
   border: 0,
-  borderRadius: "5px",
+  borderRadius: 0,
   margin: 0,
   padding: 0,
   cursor: disabled ? "default" : "pointer",
@@ -37,16 +37,16 @@ const ButtonBaseRoot = styled(
 }));
 
 const ButtonBase = React.forwardRef((props, ref) => {
-  const { children, className, disabled = false, onClick, type } = props;
+  const { children, className, disabled = false, type, onClick } = props;
   return _jsxs(
     ButtonBaseRoot,
     _extends(
       {
         className: className,
-        onClick: onClick,
         ref: ref,
         disabled: disabled,
         type: type,
+        onClick: onClick,
       },
       {
         children: [children],

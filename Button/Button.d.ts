@@ -1,12 +1,11 @@
 import * as React from "react";
 
-export interface IButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps {
   className?: string;
 
   variant?: "text" | "outlined" | "filled";
 
-  color?: "primary" | "error" | "success";
+  color?: "primary" | "secondary" | "error" | "success";
 
   sz?: "small" | "medium" | "large";
 

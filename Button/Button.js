@@ -2,6 +2,19 @@
 
 import React from "react";
 import clsx from "clsx";
+import _objectWithoutPropertiesLoose from "@babel/runtime/helpers/esm/objectWithoutPropertiesLoose";
+const included = [
+  "children",
+  "color",
+  "component",
+  "className",
+  "disabled",
+  "endIcon",
+  "sz",
+  "startIcon",
+  "type",
+  "variant",
+];
 import ButtonBase from "../ButtonBase/ButtonBase";
 import ButtonContext from "./ButtonContext";
 import _extends from "@babel/runtime/helpers/esm/extends";
@@ -15,13 +28,17 @@ const ButtonRoot = styled(ButtonBase, {
   shouldForwardProp: (prop) => isPropValid(prop),
 })(({ color, variant, sz, theme }) => {
   return {
+    //default button
+    minWidth: "72px",
+    borderRadius: "4px",
+    transition: "all 250ms cubic-bezier(1.000, 0.010, 0.200, 0.800)",
     // color: "primary" && {
     ...(color === "primary" && {
       // variant: "text"
       ...(variant === "text" && {
         color: theme.violet[500],
         "&:hover": {
-          backgroundColor: theme.gray[20],
+          backgroundColor: theme.gray[200],
         },
       }),
       // variant: "filled"
@@ -33,12 +50,40 @@ const ButtonRoot = styled(ButtonBase, {
         },
       }),
       // variant: "outline"
-      ...(variant === "outline" && {
+      ...(variant === "outlined" && {
         color: theme.violet[500],
         border: `2px solid ${theme.violet[300]}`,
         "&:hover": {
-          backgroundColor: theme.gray[20],
+          backgroundColor: theme.gray[200],
           border: `2px solid ${theme.violet[500]}`,
+        },
+      }),
+    }),
+
+    // color: "secondary" && {
+    ...(color === "secondary" && {
+      // variant: "text"
+      ...(variant === "text" && {
+        color: theme.blue[500],
+        "&:hover": {
+          backgroundColor: theme.gray[200],
+        },
+      }),
+      // variant: "filled"
+      ...(variant === "filled" && {
+        color: theme.gray[50],
+        backgroundColor: theme.blue[300],
+        "&:hover": {
+          backgroundColor: theme.blue[500],
+        },
+      }),
+      // variant: "outline"
+      ...(variant === "outlined" && {
+        color: theme.blue[500],
+        border: `2px solid ${theme.blue[300]}`,
+        "&:hover": {
+          backgroundColor: theme.gray[200],
+          border: `2px solid ${theme.blue[500]}`,
         },
       }),
     }),
@@ -49,7 +94,7 @@ const ButtonRoot = styled(ButtonBase, {
       ...(variant === "text" && {
         color: theme.red[300],
         "&:hover": {
-          backgroundColor: theme.gray[20],
+          backgroundColor: theme.gray[200],
         },
       }),
       // variant: "filled"
@@ -61,11 +106,11 @@ const ButtonRoot = styled(ButtonBase, {
         },
       }),
       // variant: "outline"
-      ...(variant === "outline" && {
+      ...(variant === "outlined" && {
         color: theme.red[500],
         border: `2px solid ${theme.red[300]}`,
         "&:hover": {
-          backgroundColor: theme.gray[20],
+          backgroundColor: theme.gray[200],
           border: `2px solid ${theme.red[500]}`,
         },
       }),
@@ -77,7 +122,7 @@ const ButtonRoot = styled(ButtonBase, {
       ...(variant === "text" && {
         color: theme.green[500],
         "&:hover": {
-          backgroundColor: theme.gray[20],
+          backgroundColor: theme.gray[200],
         },
       }),
       // variant: "filled"
@@ -89,11 +134,11 @@ const ButtonRoot = styled(ButtonBase, {
         },
       }),
       // variant: "outline"
-      ...(variant === "outline" && {
+      ...(variant === "outlined" && {
         color: theme.green[500],
         border: `2px solid ${theme.green[300]}`,
         "&:hover": {
-          backgroundColor: theme.gray[20],
+          backgroundColor: theme.gray[200],
           border: `2px solid ${theme.green[500]}`,
         },
       }),
@@ -101,18 +146,21 @@ const ButtonRoot = styled(ButtonBase, {
 
     // sz: "medium"
     ...(sz === "medium" && {
-      fontSize: "14px",
-      padding: "11px 16px",
+      fontSize: "0.875rem",
+      lineHeight: "1rem",
+      padding: "9px 27px",
     }),
     // sz: "small"
     ...(sz === "small" && {
-      fontSize: "12px",
-      padding: "6px 8px",
+      fontSize: "0.75rem",
+      lineHeight: "0.875rem",
+      padding: "8px 24px",
     }),
     // sz: "large"
     ...(sz === "large" && {
-      fontSize: "16px",
-      padding: "16px 24px",
+      fontSize: "1rem",
+      lineHeight: "1.1875rem",
+      padding: "11px 33px",
     }),
   };
 });
@@ -133,6 +181,10 @@ const Button = React.forwardRef((props, ref) => {
     disabled = false,
   } = resolvedProps;
 
+  const other = _objectWithoutPropertiesLoose(props, included);
+
+  console.log(other);
+
   return _jsxs(
     ButtonRoot,
     _extends(
@@ -144,8 +196,8 @@ const Button = React.forwardRef((props, ref) => {
         variant: variant,
         sz: sz,
         theme: theme,
-        onClick: onClick,
       },
+      other,
       {
         children: [startIcon, children, endIcon].filter(Boolean),
       }

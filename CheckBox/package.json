@@ -1,0 +1,6 @@
+{
+  "sideEffects": false,
+  "module": "./index.js",
+  "main": "../node/CheckBoc/index.js",
+  "types": "module"
+}

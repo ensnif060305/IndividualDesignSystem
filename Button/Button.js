@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import clsx from "clsx";
 import _objectWithoutPropertiesLoose from "@babel/runtime/helpers/esm/objectWithoutPropertiesLoose";
 const included = [
@@ -44,7 +44,7 @@ const ButtonRoot = styled(ButtonBase, {
       // variant: "filled"
       ...(variant === "filled" && {
         color: theme.gray[50],
-        backgroundColor: theme.violet[300],
+        backgroundColor: theme.violet[400],
         "&:hover": {
           backgroundColor: theme.violet[500],
         },
@@ -52,7 +52,7 @@ const ButtonRoot = styled(ButtonBase, {
       // variant: "outline"
       ...(variant === "outlined" && {
         color: theme.violet[500],
-        border: `2px solid ${theme.violet[300]}`,
+        border: `2px solid ${theme.violet[400]}`,
         "&:hover": {
           backgroundColor: theme.gray[200],
           border: `2px solid ${theme.violet[500]}`,
@@ -72,7 +72,7 @@ const ButtonRoot = styled(ButtonBase, {
       // variant: "filled"
       ...(variant === "filled" && {
         color: theme.gray[50],
-        backgroundColor: theme.blue[300],
+        backgroundColor: theme.blue[400],
         "&:hover": {
           backgroundColor: theme.blue[500],
         },
@@ -80,7 +80,7 @@ const ButtonRoot = styled(ButtonBase, {
       // variant: "outline"
       ...(variant === "outlined" && {
         color: theme.blue[500],
-        border: `2px solid ${theme.blue[300]}`,
+        border: `2px solid ${theme.blue[400]}`,
         "&:hover": {
           backgroundColor: theme.gray[200],
           border: `2px solid ${theme.blue[500]}`,
@@ -92,7 +92,7 @@ const ButtonRoot = styled(ButtonBase, {
     ...(color === "error" && {
       // variant: "text"
       ...(variant === "text" && {
-        color: theme.red[300],
+        color: theme.red[400],
         "&:hover": {
           backgroundColor: theme.gray[200],
         },
@@ -100,7 +100,7 @@ const ButtonRoot = styled(ButtonBase, {
       // variant: "filled"
       ...(variant === "filled" && {
         color: theme.gray[50],
-        backgroundColor: theme.red[300],
+        backgroundColor: theme.red[400],
         "&:hover": {
           backgroundColor: theme.red[500],
         },
@@ -108,7 +108,7 @@ const ButtonRoot = styled(ButtonBase, {
       // variant: "outline"
       ...(variant === "outlined" && {
         color: theme.red[500],
-        border: `2px solid ${theme.red[300]}`,
+        border: `2px solid ${theme.red[400]}`,
         "&:hover": {
           backgroundColor: theme.gray[200],
           border: `2px solid ${theme.red[500]}`,
@@ -128,7 +128,7 @@ const ButtonRoot = styled(ButtonBase, {
       // variant: "filled"
       ...(variant === "filled" && {
         color: theme.gray[50],
-        backgroundColor: theme.green[300],
+        backgroundColor: theme.green[400],
         "&:hover": {
           backgroundColor: theme.green[500],
         },
@@ -136,7 +136,7 @@ const ButtonRoot = styled(ButtonBase, {
       // variant: "outline"
       ...(variant === "outlined" && {
         color: theme.green[500],
-        border: `2px solid ${theme.green[300]}`,
+        border: `2px solid ${theme.green[400]}`,
         "&:hover": {
           backgroundColor: theme.gray[200],
           border: `2px solid ${theme.green[500]}`,
